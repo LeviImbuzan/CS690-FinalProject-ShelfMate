@@ -1,6 +1,4 @@
-# CS690-FinalProject-ShelfMate
-
-ShelfMate 📚
+# ShelfMate 📚 
 Your Personal Book Tracker – Simple, Smart, and Organized
 
 ShelfMate is a book tracking app designed to help readers keep track of their reading progress, owned books, and reading goals. Whether you're in the middle of a gripping novel, building a "To Read" list, or trying to remember if you already own a book, ShelfMate has you covered.
