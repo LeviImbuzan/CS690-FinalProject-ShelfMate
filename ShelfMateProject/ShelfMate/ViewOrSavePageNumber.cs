@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Spectre.Console;
 
 namespace ShelfMate
@@ -54,7 +54,19 @@ namespace ShelfMate
             }
             else if (action == "Save New Page Number")
             {
-                int newPage = AnsiConsole.Ask<int>("Enter the new page number:");
+                int newPage = -1;
+
+                // Prompt the user for a valid page number
+                while (newPage < 0)
+                {
+                    newPage = AnsiConsole.Ask<int>("Enter the new page number (must be greater than 0):");
+
+                    // Check if the entered page number is valid
+                    if (newPage < 0)
+                    {
+                        AnsiConsole.Markup("[red]The page number must be greater than 0. Please try again.[/]\n");
+                    }
+                }
 
                 // Ensure we have enough elements in the list
                 while (bookDetails.Count <= pageNumberIndex)
