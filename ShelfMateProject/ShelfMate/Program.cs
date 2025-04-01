@@ -1,5 +1,4 @@
-﻿// File: Program.cs
-using System;
+﻿using System;
 using Spectre.Console;
 
 namespace ShelfMate
@@ -27,6 +26,7 @@ namespace ShelfMate
                                 .PageSize(10)
                                 .MoreChoicesText("[grey](Move up and down to reveal more choices)[/]")
                                 .AddChoices(new[] {
+                                    "Search for a Book", 
                                     "Add New Book to Library", 
                                     "View My Book Library", 
                                     "Edit Status of a Book", 
@@ -35,7 +35,11 @@ namespace ShelfMate
                                 })
                         );
 
-                        if (start == "Add New Book to Library")
+                        if (start == "Search for a Book")
+                        {
+                            BookSearch.Execute(); // Assuming Execute() is the method to trigger search
+                        }
+                        else if (start == "Add New Book to Library")
                         {
                             AddNewBook.Execute();
                         }
